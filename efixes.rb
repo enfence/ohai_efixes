@@ -26,8 +26,8 @@ Ohai.plugin(:Efixes) do
     # Output format is
     # ID STATE LABEL INST_DATE INST_TIME REST
     emgr.each do |fix|
-      _, state, label, date, time, desc = fix.split(" ")
-      efixes[label] = { "state" => state, "date" => date, "time" => time, "description" => desc }
+      _, state, label, date, time, desc = fix.split(" ", 6)
+      efixes[label] = { "state" => state, "date" => date, "time" => time, "description" => desc[0..-2] }
     end
 
   end
