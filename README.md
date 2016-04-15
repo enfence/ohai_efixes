@@ -6,16 +6,22 @@ Installation
 ============
 
 Create a directory for ohai plugins, if you don't have it already:
+
     mkdir /etc/chef/plugins
   
 Copy the plugin there:
+
     cp efixes.rb /etc/chef/plugins
 
 Enable the directory in Chef-client or Ohai config:
+
     echo 'ohai[:plugin_path] << "/etc/chef/plugins"' >> /etc/chef/client.rb
 
 Run chef-client or ohai:
+
     chef-client
+
+or
 
     ohai -c /etc/chef/client.rb efixes
 
